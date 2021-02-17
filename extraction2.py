@@ -34,6 +34,7 @@ for day in range(delta.days + 1):
 
     # calculating days since covid hit US
     days_since_start = date - pandemic_start
+    print(type(days_since_start))
 
     # adding another column with days since covid hit the US
     raw_data['Days since start'] = days_since_start.days  # number of days
@@ -42,7 +43,7 @@ for day in range(delta.days + 1):
     if delete_unassigned:
         raw_data = raw_data[raw_data['Lat'].notna()]
         raw_data = raw_data[raw_data['Long_'].notna()]
-    #else:
+    # else:
         # fill in center of mass for unassigned, out of
         # take all rows of a state with lat/long values that aren't 0.0 or nan and calculate
 
